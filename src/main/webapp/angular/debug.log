@@ -1,0 +1,11 @@
+[0922/001536.910:ERROR:file_io_win.cc(162)] CreateFile C:\Users\ssuraj\AppData\Local\Temp\karma-39116770\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0922/001536.912:ERROR:file_io_win.cc(171)] CreateFile C:\Users\ssuraj\AppData\Local\Temp\karma-39116770\Crashpad\reports\f4f253d2-a7cb-4663-a57e-e19e28c835ff.dmp: The system cannot find the path specified. (0x3)
+[0922/001536.912:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[1010/191126.214:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/130738.320:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/140150.964:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/141432.369:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/153032.941:ERROR:file_io_win.cc(162)] CreateFile C:\Users\ssuraj\AppData\Local\Temp\karma-34100270\Crashpad\settings.dat: The system cannot find the file specified. (0x2)
+[1015/154024.984:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/155133.622:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/162224.132:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

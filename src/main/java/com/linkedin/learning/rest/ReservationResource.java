@@ -2,6 +2,8 @@
 package com.linkedin.learning.rest;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -24,10 +26,14 @@ import com.linkedin.learning.model.response.ReservationResponse;
 public class ReservationResource {
 	
 	@RequestMapping(path="",method=RequestMethod.GET,produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<ReservationResponse> getAvailableRooms(
+	public ResponseEntity<?> getAvailableRooms(
 			@RequestParam(value = "checkin",required=true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkin,
 			@RequestParam(value = "checkin",required=true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkout) {
-		return new ResponseEntity<>(new ReservationResponse(), HttpStatus.OK);
+		
+		List<ReservationResponse> responseSample = new ArrayList<ReservationResponse>();
+		responseSample.add(new ReservationResponse(1,2000));
+		responseSample.add(new ReservationResponse(2,4000));
+		return new ResponseEntity<>(responseSample, HttpStatus.OK);
 
 	}
 	

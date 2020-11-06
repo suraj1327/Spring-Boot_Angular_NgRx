@@ -4,9 +4,9 @@ import com.linkedin.learning.model.Links;
 
 public class ReservationResponse {
 
-	private Long id;
-	private Integer roomNumder;
-	private Integer price;
+	private Long id = Long.valueOf(1);
+	private Integer roomNumber = 123;
+	private Integer price =1000;
 	private Links links;
 	public Long getId() {
 		return id;
@@ -15,10 +15,10 @@ public class ReservationResponse {
 		this.id = id;
 	}
 	public Integer getRoomNumder() {
-		return roomNumder;
+		return roomNumber;
 	}
 	public void setRoomNumder(Integer roomNumder) {
-		this.roomNumder = roomNumder;
+		this.roomNumber = roomNumder;
 	}
 	public Integer getPrice() {
 		return price;
@@ -37,7 +37,7 @@ public class ReservationResponse {
 	}
 	public ReservationResponse(Integer roomNumder, Integer price) {
 		super();
-		this.roomNumder = roomNumder;
+		this.roomNumber = roomNumder;
 		this.price = price;
 	}
 	

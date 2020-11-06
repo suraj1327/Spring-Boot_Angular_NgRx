@@ -1,0 +1,18 @@
+<h1>
+  Showing posts information
+  </h1>
+  <div>
+  <ul>
+    <li *ngIf="posts">
+      {{posts[0]?.name}}
+    </li>
+  </ul>
+  </div>
+
+  <div class="left" *ngIf="addedRooms">
+    <h3>Rooms added {{messageFromService}}</h3>
+    <ul>
+     <li *ngFor="let room of addedRooms | async"> 
+     {{room.id}}
+      </li>
+    </ul>
