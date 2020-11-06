@@ -19,3 +19,11 @@ table{
   }
 
 }
+
+a:active{
+  background-color: rgb(146, 231, 252);
+}
+
+a:visited{
+  background-color: rgb(146, 231, 252);
+}

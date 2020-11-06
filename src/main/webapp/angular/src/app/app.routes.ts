@@ -4,10 +4,7 @@ import { AppComponent } from './app.component';
 import { HotelDataComponent } from './hotel-data/hotel-data.component';
 import { PostDataComponent } from './post-data/post-data.component';
 
-const routes:Routes= [{
-            path: '',
-            component: AppComponent
-        }, 
+const routes:Routes= [
         {
             path:'hotel',
             component:HotelDataComponent

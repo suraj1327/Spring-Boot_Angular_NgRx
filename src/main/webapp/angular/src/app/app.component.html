@@ -1,56 +1,10 @@
 
-<h1>Welcome to App</h1>
-<button id="start" (click)="startCounter()">Start</button>
-<p>Count numbers: <output id="result"></output></p>
-
-<form class="form-horizontal" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
-
-  <input type="text" formControlName="username"/>
-  {{userName}}
-  <button type="submit" class="btn btn-primary btn-large " [disabled]="!myForm.valid" id="Submit">Submit</button>
-  </form>
-
-<h4>Testing template driven form validation</h4>
-<form #myTemplateForm="ngForm" novalidate (ngSubmit)="myTemplateForm.form.valid && submitForm()">
-  <label class="col-md-2">Sample Input</label>
-  <div class="col-md-2"><input type="text" name="sample" required minlength="4" appForbiddenName="bob"
-      [(ngModel)]="sampleData.sampleValue" class="form-control" #sample="ngModel" /></div>
-  <!--&& (sample.dirty || sample.touched-->
-  <div *ngIf="sample.invalid && sample.dirty" class="alert alert-danger">
-    <div *ngIf="sample.errors.required">
-      Name is required
-    </div>
-  </div>
-  <div class="form-group">
-    <button type="submit">Submit</button>
-  </div>
-</form>
-
-  <table class="table table-striped table-responsive">
-  <thead>
-    <th>Id</th>
-    <th>name</th>
-    <th>userName</th>
-    <th>email</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of usersList">
-      <td *ngIf="$state | async as user">{{user.id}}
-       </td>
-      <td>{{user.name}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.email}}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-{{errorMessage}}
+<h1>Welcome to my demo app</h1>
 
 <header id="intro" style="display: block;">
   <article class="fullheight" style="height: 568px;">
     <div class="hgroup">
-      <h1>Landon Hotel</h1>
+      <h1>An Amazing Hotel</h1>
       <h2>West London</h2>
       <p><a href=""><img src="../assets/images/arrow.png" alt="down arrow"></a></p>
     </div>
@@ -59,9 +13,9 @@
   <!-- <div class="scrollmagic-pin-spacer"
        style="display: block; top: auto; left: auto; bottom: auto; right: auto; position: relative; margin: 0 auto auto; box-sizing: content-box; width: 100%; min-height: 44px; height: auto; padding-top: 0; padding-bottom: 0;"> -->
     <div>
-             <nav id="nav" style="position: relative; top: 0; left: 0; bottom: auto; right: auto; width: 100%;">
+    <nav id="nav" style="position: relative; top: 0; left: 0; bottom: auto; right: auto; width: 100%;">
       <div class="navbar">
-        <div class="brand"><a [routerLink]="['hotel']">Landon <span>Hotel</span></a></div>
+        <div class="brand"><a routerLinkActive [routerLink]="['hotel']">Landon <span>Hotel</span></a></div>
         <div class="brand"><a [routerLink]="['posts']">Posts <span>Data</span></a></div>
         <div class="brand"><a [routerLink]="['person']">Person <span>Data</span></a></div>
       </div><!-- navbar -->
@@ -69,5 +23,40 @@
   </div>
   </header>
 <router-outlet></router-outlet>
+<h3>Fetching data from service using NgRxEffects</h3>
+  <table class="table table-striped table-responsive">
+    <thead>
+      <th>Id</th>
+      <th>name</th>
+      <th>userName</th>
+      <th>email</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList">
+        <td *ngIf="$state | async as user">{{user.id}}
+         </td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Testing template driven form validation</h4>
+  <form #myTemplateForm="ngForm" novalidate (ngSubmit)="myTemplateForm.form.valid && submitForm()">
+    <label class="col-md-2">Sample Input</label>
+    <div class="col-md-2"><input type="text" name="sample" required minlength="4" appForbiddenName="bob"
+        [(ngModel)]="sampleData.sampleValue" class="form-control" #sample="ngModel" /></div>
+    <!--&& (sample.dirty || sample.touched-->
+    <div *ngIf="sample.invalid && sample.dirty" class="alert alert-danger">
+      <div *ngIf="sample.errors.required">
+        Name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  
+  {{errorMessage}}
 
 
