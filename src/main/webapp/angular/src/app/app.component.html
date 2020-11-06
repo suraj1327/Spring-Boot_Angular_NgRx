@@ -1,6 +1,4 @@
 
-<h1>Welcome to my demo app</h1>
-
 <header id="intro" style="display: block;">
   <article class="fullheight" style="height: 568px;">
     <div class="hgroup">
@@ -24,20 +22,19 @@
   </header>
 <router-outlet></router-outlet>
 <h3>Fetching data from service using NgRxEffects</h3>
-  <table class="table table-striped table-responsive">
+  <table class="table table-striped table-responsive table-bordered">
     <thead>
-      <th>Id</th>
-      <th>name</th>
-      <th>userName</th>
-      <th>email</th>
+      <th *ngIf="$state">Id</th>
+      <th><strong>Name</strong></th>
+      <th><strong>UserName</strong></th>
     </thead>
     <tbody>
       <tr *ngFor="let user of usersList">
-        <td *ngIf="$state | async as user">{{user.id}}
+        <td *ngIf="$state | async as user">
+          {{user.id}}
          </td>
         <td>{{user.name}}</td>
         <td>{{user.username}}</td>
-        <td>{{user.email}}</td>
       </tr>
     </tbody>
   </table>
